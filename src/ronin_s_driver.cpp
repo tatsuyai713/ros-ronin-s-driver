@@ -172,9 +172,9 @@ void RoninSDriver::publisherTimerCallback(void)
     }
 
     double scale = 10000;
-    int16_t roll = (int16_t)(out_twist_.angular.x * scale);
-    int16_t pitch = (int16_t)(out_twist_.angular.y * scale);
-    int16_t yaw = (int16_t)(out_twist_.angular.z * scale);
+    int16_t roll = (int16_t)(in_twist_.angular.x * scale);
+    int16_t pitch = (int16_t)(in_twist_.angular.y * scale);
+    int16_t yaw = (int16_t)(in_twist_.angular.z * scale);
 
     roll = limitRoninSVel(roll);
     pitch = limitRoninSVel(pitch);
